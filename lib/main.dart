@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meals/screens/tabs.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,12 +18,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           brightness: Brightness.dark,
-          seedColor: Color.fromARGB(255, 0, 216, 249),
+          seedColor: const Color.fromARGB(255, 0, 216, 249),
         ),
         textTheme: GoogleFonts.magraTextTheme(),
         useMaterial3: true,
       ),
-      home: TabsScreen(),
+      home: const TabsScreen(),
     );
   }
 }
